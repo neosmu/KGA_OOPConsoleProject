@@ -13,12 +13,16 @@ namespace OOPConsoleProject
         private static Scene curScene;
         private static bool gameOver;
 
+        public static Player player;
+        public static Player Player { get { return player; } set { player = value; } }
+
         // 게임 동작
         public static void Run()
         {
             Start();
             while (gameOver == false)
             {
+                Console.Clear();
                 curScene.Render();
                 curScene.Input();
                 curScene.Update();
@@ -34,8 +38,14 @@ namespace OOPConsoleProject
             // 씬 설정
             sceneDic = new Dictionary<string, Scene>();
             sceneDic.Add("Title", new TitleScene());
+            sceneDic.Add("Choice", new PlayerChoiceScene());
 
             curScene = sceneDic["Title"];
+        }
+
+        public static void ChangeScene(string sceneName)
+        {
+            curScene = sceneDic[sceneName];
         }
 
         private static void End()

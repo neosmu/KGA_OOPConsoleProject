@@ -30,7 +30,7 @@ namespace OOPConsoleProject.Scenes
         }
         public override void Result()
         {
-            
+            Game.ChangeScene("Choice");
         }
     }
 }
