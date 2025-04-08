@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,6 +18,35 @@ namespace OOPConsoleProject
             this.name = name;
             this.attack = attack;
             this.hp = hp;
+        }
+        public Vector2 position;
+        public bool[,] map;
+
+        public void Print()
+        {
+            Console.SetCursorPosition(position.x, position.y);
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write('P');
+            Console.ResetColor();
+        }
+
+        public void Move(ConsoleKey input)
+        {
+            switch (input)
+            {
+                case ConsoleKey.UpArrow:
+                    position.y--;
+                    break;
+                case ConsoleKey.DownArrow:
+                    position.y++;
+                    break;
+                case ConsoleKey.LeftArrow:
+                    position.x--;
+                    break;
+                case ConsoleKey.RightArrow:
+                    position.x++;
+                    break;
+            }
         }
     }
     public class PlayerFactory

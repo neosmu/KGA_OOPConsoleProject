@@ -35,18 +35,22 @@ namespace OOPConsoleProject.Scenes
             switch (input)
             {
                 case ConsoleKey.D1:
-                    Game.player = new Player("전사", 100, 100);
+                    Game.Player = new Player("전사", 100, 100);
                     Util.PressAnyKey("전사를 선택하였습니다.");
+                    Game.Player.position = new Vector2(1, 1);
                     break;
                 case ConsoleKey.D2:
-                    Game.player = new Player("궁수", 120, 80);
+                    Game.Player = new Player("궁수", 120, 80);
                     Util.PressAnyKey("궁수를 선택하였습니다.");
+                    Game.Player.position = new Vector2(1, 1);
                     break;
                 case ConsoleKey.D3:
-                    Game.player = new Player("탱커", 70, 150);
+                    Game.Player = new Player("탱커", 70, 150);
                     Util.PressAnyKey("탱커를 선택하였습니다.");
+                    Game.Player.position = new Vector2(1, 1);
                     break;
             }
+            Game.ChangeScene("Town");
         }
     }
 }
