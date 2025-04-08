@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace OOPConsoleProject
 {
@@ -11,13 +13,24 @@ namespace OOPConsoleProject
     {
         public string name;
         public int attack;
-        public int hp;
-        
+        private int curHP;
+        public int CurHP { get { return curHP; } set { curHP = value; } }
+        private int maxHP;
+        public int MaxHP { get { return maxHP; } set { maxHP = value; } }
+
         public Player(string name, int attack, int hp)
         {
             this.name = name;
             this.attack = attack;
-            this.hp = hp;
+            this.maxHP = hp;
+            this.curHP = hp;
+        }
+        public void PrintStats()
+        {
+            Console.WriteLine("== 플레이어 정보 ==");
+            Console.WriteLine("직업 : {0}", Game.Player.name);
+            Console.WriteLine("체력 : {0} / {1}", Game.Player.CurHP, Game.Player.MaxHP);
+            Console.WriteLine("공격력 : {0}", Game.Player.attack);
         }
         public Vector2 position;
         public bool[,] map;

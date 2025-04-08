@@ -17,7 +17,7 @@ namespace OOPConsoleProject.Scenes
         }
         public override void Render()
         {
-            Console.WriteLine("플레이할 캐릭터를 선택해주세요");
+            Console.WriteLine("==플레이할 캐릭터를 선택해주세요==");
             Console.WriteLine("1. 전사");
             Console.WriteLine("2. 궁수");
             Console.WriteLine("3. 탱커");

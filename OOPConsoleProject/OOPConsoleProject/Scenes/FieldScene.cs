@@ -24,6 +24,8 @@ namespace OOPConsoleProject.Scenes
                 go.Print();
             }
             Game.Player.Print();
+            Console.SetCursorPosition(0, map.GetLength(0) + 2);
+            Game.Player.PrintStats();
         }
 
         public override void Input()
