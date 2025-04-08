@@ -48,9 +48,9 @@ namespace OOPConsoleProject
             curScene = sceneDic[sceneName];
         }
 
-        private static void End()
+        public static void End()
         {
-
+            gameOver = true;
         }
     }
 }

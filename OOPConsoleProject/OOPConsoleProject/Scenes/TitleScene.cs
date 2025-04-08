@@ -8,6 +8,7 @@ namespace OOPConsoleProject.Scenes
 {
     public class TitleScene : Scene
     {
+        private ConsoleKey input;
         public TitleScene()
         {
             name = "Title";
@@ -18,11 +19,12 @@ namespace OOPConsoleProject.Scenes
             Console.WriteLine("*   몬스터 사냥    *");
             Console.WriteLine("********************");
             Console.WriteLine();
-            Console.WriteLine("계속하려면 아무키나 누르세요...");
+            Console.WriteLine("1. 게임 시작");
+            Console.WriteLine("2. 게임 종료");
         }
         public override void Input()
         {
-            Console.ReadKey(true);
+            input = Console.ReadKey(true).Key;
         }
         public override void Update()
         {
@@ -30,7 +32,17 @@ namespace OOPConsoleProject.Scenes
         }
         public override void Result()
         {
-            Game.ChangeScene("Choice");
+            switch (input)
+            {
+                case ConsoleKey.D1:
+                    Game.ChangeScene("Choice");
+                    break;
+                case ConsoleKey.D2:
+                    Console.WriteLine("게임을 종료합니다.");
+                    Game.End();
+                    break;
+            }
+            
         }
     }
 }
