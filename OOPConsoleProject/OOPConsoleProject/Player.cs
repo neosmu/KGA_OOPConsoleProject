@@ -29,23 +29,42 @@ namespace OOPConsoleProject
             Console.Write('P');
             Console.ResetColor();
         }
-
-        public void Move(ConsoleKey input)
+        public void Action(ConsoleKey input)
         {
             switch (input)
             {
                 case ConsoleKey.UpArrow:
-                    position.y--;
+                case ConsoleKey.DownArrow:
+                case ConsoleKey.LeftArrow:
+                case ConsoleKey.RightArrow:
+                    Move(input);
+                    break;
+            }
+        }
+
+        private void Move(ConsoleKey input)
+        {
+            Vector2 targetPos = position;
+
+            switch (input)
+            {
+                case ConsoleKey.UpArrow:
+                    targetPos.y--;
                     break;
                 case ConsoleKey.DownArrow:
-                    position.y++;
+                    targetPos.y++;
                     break;
                 case ConsoleKey.LeftArrow:
-                    position.x--;
+                    targetPos.x--;
                     break;
                 case ConsoleKey.RightArrow:
-                    position.x++;
+                    targetPos.x++;
                     break;
+            }
+
+            if (map[targetPos.y, targetPos.x] == true)
+            {
+                position = targetPos;
             }
         }
     }

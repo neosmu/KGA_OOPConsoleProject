@@ -14,5 +14,6 @@ namespace OOPConsoleProject
         public abstract void Input();
         public abstract void Update();
         public abstract void Result();
+        public virtual void Enter() { }
     }
 }

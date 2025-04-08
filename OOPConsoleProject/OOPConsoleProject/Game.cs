@@ -11,6 +11,7 @@ namespace OOPConsoleProject
     {
         private static Dictionary<string, Scene> sceneDic;
         private static Scene curScene;
+        public static string prevSceneName;
         private static bool gameOver;
 
         private static Player player;
@@ -42,14 +43,17 @@ namespace OOPConsoleProject
             sceneDic.Add("Title", new TitleScene());
             sceneDic.Add("Choice", new PlayerChoiceScene());
             sceneDic.Add("Town", new TownScene());
-            sceneDic.Add("Field", new FieldScene());
+            sceneDic.Add("Forest", new ForestFieldScene());
 
             curScene = sceneDic["Title"];
         }
 
         public static void ChangeScene(string sceneName)
         {
+            prevSceneName = curScene.name;
+
             curScene = sceneDic[sceneName];
+            curScene.Enter();
         }
 
         public static void End()

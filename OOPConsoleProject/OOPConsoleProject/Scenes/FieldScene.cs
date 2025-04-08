@@ -11,35 +11,18 @@ namespace OOPConsoleProject.Scenes
     {
         private ConsoleKey input;
    
-        private string[] mapData;
-        private bool[,] map;
+        protected string[] mapData;
+        protected bool[,] map;
 
-        public FieldScene()
-        {
-            mapData = new string[]
-            {
-                 "########",
-                 "#      #",
-                 "#      #",
-                 "#      #",
-                 "#      #",
-                 "########"
-            };
-
-            map = new bool[6, 8];
-            for (int y = 0; y < map.GetLength(0); y++)
-            {
-                for (int x = 0; x < map.GetLength(1); x++)
-                {
-                    map[y, x] = mapData[y][x] == '#' ? false : true;
-                }
-            }
-            Game.Player.position = new Vector2(1, 1);
-        }
+        protected List<GameObject> gameObjects;
 
         public override void Render()
         {
             PrintMap();
+            foreach (GameObject go in gameObjects)
+            {
+                go.Print();
+            }
             Game.Player.Print();
         }
 
@@ -50,11 +33,22 @@ namespace OOPConsoleProject.Scenes
 
         public override void Update()
         {
-            Game.Player.Move(input);
+            Game.Player.Action(input);
         }
         public override void Result()
         {
-
+            foreach (GameObject go in gameObjects)
+            {
+                if (Game.Player.position == go.position)
+                {
+                    go.Interact(Game.Player);
+                    if (go.isOnce == true)
+                    {
+                        gameObjects.Remove(go);
+                    }
+                    break;
+                }
+            }
         }
         private void PrintMap()
         {

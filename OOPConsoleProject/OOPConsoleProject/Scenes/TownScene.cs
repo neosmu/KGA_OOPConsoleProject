@@ -35,7 +35,7 @@ namespace OOPConsoleProject.Scenes
             {
                 case ConsoleKey.D1:
                     Util.PressAnyKey("마을 밖으로 나갑니다.");
-                    Game.ChangeScene("Field");
+                    Game.ChangeScene("Forest");
                     break;
             }
         }
