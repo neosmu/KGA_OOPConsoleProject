@@ -42,6 +42,10 @@ namespace OOPConsoleProject.Scenes
             {
                 Game.Player.position = new Vector2(1, 1);
             }
+            if (Game.prevSceneName == "Hidden")
+            {
+                Game.Player.position = new Vector2(8, 1);
+            }
             Game.Player.map = map;
         }
     }

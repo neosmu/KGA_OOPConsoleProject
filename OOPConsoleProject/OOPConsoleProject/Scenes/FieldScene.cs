@@ -26,6 +26,8 @@ namespace OOPConsoleProject.Scenes
             Game.Player.Print();
             Console.SetCursorPosition(0, map.GetLength(0) + 2);
             Game.Player.PrintStats();
+            Console.SetCursorPosition(0, map.GetLength(0) + 6); 
+            Console.WriteLine("인벤토리 열기 : I");
         }
 
         public override void Input()

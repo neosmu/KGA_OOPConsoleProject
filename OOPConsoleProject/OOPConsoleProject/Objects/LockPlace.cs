@@ -24,7 +24,6 @@ namespace OOPConsoleProject.Objects
             if (requireKey)
             {
                 Util.PressAnyKey("열쇠로 문을 열었습니다!");
-                Game.hasKey = false;
             }
             Game.ChangeScene(scene);
         }

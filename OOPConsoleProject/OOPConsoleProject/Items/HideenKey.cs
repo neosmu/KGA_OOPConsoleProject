@@ -18,7 +18,6 @@ namespace OOPConsoleProject.Items
         public override void Use()
         {
             Game.hasKey = true;
-            Util.PressAnyKey("열쇠를 획득했습니다! 이제 비밀방을 열 수 있습니다.");
         }
     }
 }

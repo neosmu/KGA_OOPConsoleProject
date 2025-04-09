@@ -22,6 +22,13 @@ namespace OOPConsoleProject
         public Inventory Inventory { get { return inventory; } }
         public Vector2 position;
         public bool[,] map;
+
+        public void Bonus(int attackBonus, int hpBonus)
+        {
+            attack += attackBonus;
+            maxHP += hpBonus;
+            curHP = maxHP;
+        }
         public Player(string name, int attack, int hp)
         {
             this.name = name;
