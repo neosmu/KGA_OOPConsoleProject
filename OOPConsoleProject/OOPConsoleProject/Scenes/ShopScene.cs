@@ -50,6 +50,8 @@ namespace OOPConsoleProject.Scenes
             {
                 case ConsoleKey.D1:
                     Game.Player.attack += 50;
+                    
+                    // 선택한 캐릭터마다 무기가 다르게 나오게
                     switch (Game.Player.name)
                     {
                         case "전사":

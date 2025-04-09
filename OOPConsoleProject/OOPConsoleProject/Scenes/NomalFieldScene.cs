@@ -15,11 +15,11 @@ namespace OOPConsoleProject.Scenes
             mapData = new string[]
                 {
                  "##########",
-                 "#  ##    #",
-                 "#  ##    #",
+                 "#  ##  # #",
+                 "#  ##  # #",
                  "#        #",
-                 "####   # #",
-                 "#  ### # #",
+                 "####     #",
+                 "#  #   # #",
                  "#      # #",
                  "##########"
                 };
@@ -33,6 +33,7 @@ namespace OOPConsoleProject.Scenes
             }
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Place("Forest", 'F', new Vector2(1, 1)));
+            gameObjects.Add(new LockPlace("Hidden", 'H', new Vector2(8, 1), true));
         }
         public override void Enter()
         {

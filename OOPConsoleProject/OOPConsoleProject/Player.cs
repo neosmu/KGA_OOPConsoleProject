@@ -18,12 +18,17 @@ namespace OOPConsoleProject
         private int maxHP;
         public int MaxHP { get { return maxHP; } set { maxHP = value; } }
 
+        private Inventory inventory;
+        public Inventory Inventory { get { return inventory; } }
+        public Vector2 position;
+        public bool[,] map;
         public Player(string name, int attack, int hp)
         {
             this.name = name;
             this.attack = attack;
             this.maxHP = hp;
             this.curHP = hp;
+            inventory = new Inventory();
         }
         public void PrintStats()
         {
@@ -32,9 +37,6 @@ namespace OOPConsoleProject
             Console.WriteLine("체력 : {0} / {1}", Game.Player.CurHP, Game.Player.MaxHP);
             Console.WriteLine("공격력 : {0}", Game.Player.attack);
         }
-        public Vector2 position;
-        public bool[,] map;
-
         public void Print()
         {
             Console.SetCursorPosition(position.x, position.y);
@@ -51,6 +53,9 @@ namespace OOPConsoleProject
                 case ConsoleKey.LeftArrow:
                 case ConsoleKey.RightArrow:
                     Move(input);
+                    break;
+                case ConsoleKey.I:
+                    inventory.Open();
                     break;
             }
         }

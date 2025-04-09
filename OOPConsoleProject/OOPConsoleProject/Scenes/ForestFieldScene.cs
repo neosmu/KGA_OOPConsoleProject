@@ -1,4 +1,5 @@
 ﻿using OOPConsoleProject.Objects;
+using OOPConsoleProject.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +16,11 @@ namespace OOPConsoleProject.Scenes
         mapData = new string[]
             {
                  "##########",
-                 "#  ##  # #",
-                 "#  ##  # #",
+                 "#  ##    #",
+                 "#  ##    #",
                  "#        #",
                  "####   # #",
-                 "#  #   # #",
+                 "#  ### # #",
                  "#      # #",
                  "##########"
             };
@@ -34,6 +35,7 @@ namespace OOPConsoleProject.Scenes
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Place("Town", 'T', new Vector2(1, 1)));
             gameObjects.Add(new Place("Nomal", 'N', new Vector2(8, 6)));
+            gameObjects.Add(new HiddenKey(new Vector2(5, 2)));
         }
         public override void Enter()
         {

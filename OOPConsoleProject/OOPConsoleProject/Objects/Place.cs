@@ -8,7 +8,7 @@ namespace OOPConsoleProject.Objects
 {
     public class Place : GameObject
     {
-        private string scene;
+        protected string scene;
 
         public Place(string scene, char symbol, Vector2 position)
             : base(ConsoleColor.Blue, symbol, position, false)
