@@ -35,7 +35,7 @@ namespace OOPConsoleProject.Scenes
             switch (input)
             {
                 case ConsoleKey.D1:
-                    Util.PressAnyKey("마을 밖으로 나갑니다.");
+                    Console.WriteLine("마을 밖으로 나갑니다.");
                     Game.ChangeScene("Forest");
                     break;
                 case ConsoleKey.D2:

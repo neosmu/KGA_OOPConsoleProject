@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleProject.Scenes
 {
-    public class ForestFieldScene : FieldScene
+    public class NomalFieldScene : FieldScene
     {
-        public ForestFieldScene()
+        public NomalFieldScene()
         {
-            name = "Forest";
-        mapData = new string[]
-            {
+            name = "Nomal";
+            mapData = new string[]
+                {
                  "##########",
-                 "#  ##  # #",
-                 "#  ##  # #",
+                 "#  ##    #",
+                 "#  ##    #",
                  "#        #",
                  "####   # #",
-                 "#  #   # #",
+                 "#  ### # #",
                  "#      # #",
                  "##########"
-            };
+                };
             map = new bool[8, 10];
             for (int y = 0; y < map.GetLength(0); y++)
             {
@@ -32,19 +32,14 @@ namespace OOPConsoleProject.Scenes
                 }
             }
             gameObjects = new List<GameObject>();
-            gameObjects.Add(new Place("Town", 'T', new Vector2(1, 1)));
-            gameObjects.Add(new Place("Nomal", 'N', new Vector2(8, 6)));
+            gameObjects.Add(new Place("Forest", 'F', new Vector2(1, 1)));
         }
         public override void Enter()
         {
-            Util.PressAnyKey("당신은 숲속에 들어갑니다.");
-            if (Game.prevSceneName == "Town")
+            Util.PressAnyKey("당신은 광활한 들판으로 왔습니다.");
+            if (Game.prevSceneName == "Forest")
             {
                 Game.Player.position = new Vector2(1, 1);
-            }
-            else if (Game.prevSceneName == "Nomal")
-            {
-                Game.Player.position = new Vector2(8, 6);
             }
             Game.Player.map = map;
         }
