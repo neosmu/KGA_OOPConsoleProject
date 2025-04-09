@@ -34,6 +34,7 @@ namespace OOPConsoleProject.Scenes
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Place("Forest", 'F', new Vector2(1, 1)));
             gameObjects.Add(new LockPlace("Hidden", 'H', new Vector2(8, 1), true));
+            gameObjects.Add(new MonsterObject("Battle02", new Vector2(8, 6)));
         }
         public override void Enter()
         {

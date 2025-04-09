@@ -36,6 +36,7 @@ namespace OOPConsoleProject.Scenes
             gameObjects.Add(new Place("Town", 'T', new Vector2(1, 1)));
             gameObjects.Add(new Place("Nomal", 'N', new Vector2(8, 6)));
             gameObjects.Add(new HiddenKey(new Vector2(1, 6)));
+            gameObjects.Add(new MonsterObject("Battle01", new Vector2(3, 6)));
         }
         public override void Enter()
         {

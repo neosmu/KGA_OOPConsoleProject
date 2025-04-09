@@ -27,7 +27,11 @@ namespace OOPConsoleProject
         {
             attack += attackBonus;
             maxHP += hpBonus;
-            curHP = maxHP;
+            curHP += hpBonus;
+            if (curHP > maxHP)
+            {
+                curHP = maxHP;
+            }
         }
         public Player(string name, int attack, int hp)
         {

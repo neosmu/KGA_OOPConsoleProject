@@ -48,6 +48,8 @@ namespace OOPConsoleProject
             sceneDic.Add("Forest", new ForestFieldScene());
             sceneDic.Add("Nomal", new NomalFieldScene());
             sceneDic.Add("Hidden", new HiddenFieldScene());
+            sceneDic.Add("Battle01", new BattleScene01(new Monster("고블린", 60, 150)));
+            sceneDic.Add("Battle02", new BattleScene02(new Monster("오크", 90, 250)));
 
             curScene = sceneDic["Title"];
         }
@@ -58,6 +60,17 @@ namespace OOPConsoleProject
 
             curScene = sceneDic[sceneName];
             curScene.Enter();
+        }
+        public static void GameOver(string reason)
+        {
+            Console.Clear();
+            Console.WriteLine("**********************************");
+            Console.WriteLine("*          You Died...           *");
+            Console.WriteLine("**********************************");
+            Console.WriteLine();
+            Console.WriteLine(reason);
+
+            gameOver = true;
         }
 
         public static void End()
