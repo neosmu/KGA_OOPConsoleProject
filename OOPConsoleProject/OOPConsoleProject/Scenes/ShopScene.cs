@@ -21,10 +21,10 @@ namespace OOPConsoleProject.Scenes
             switch (Game.Player.name)
             {
                 case "전사":
-                    Console.WriteLine("1. 철검 (공격력 +50)");
+                    Console.WriteLine("1. 대검 (공격력 +50)");
                     break;
                 case "궁수":
-                    Console.WriteLine("1. 롱보우 (공격력 +50)");
+                    Console.WriteLine("1. 수정활 (공격력 +50)");
                     break;
                 case "탱커":
                     Console.WriteLine("1. 강철 방패 (공격력 +50)");

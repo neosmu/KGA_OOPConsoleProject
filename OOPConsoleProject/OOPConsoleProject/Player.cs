@@ -54,7 +54,6 @@ namespace OOPConsoleProject
                     break;
             }
         }
-
         private void Move(ConsoleKey input)
         {
             Vector2 targetPos = position;
