@@ -127,7 +127,6 @@ namespace OOPConsoleProject
             {
                 case ConsoleKey.Y:
                     selectItem.Use();
-                    Util.PressAnyKey($"{selectItem.name}을 사용했습니다.");
                     Remove(selectItem);
                     stack.Pop();
                     break;

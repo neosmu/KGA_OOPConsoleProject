@@ -65,7 +65,7 @@ namespace OOPConsoleProject
         {
             Console.Clear();
             Console.WriteLine("**********************************");
-            Console.WriteLine("*          You Died...           *");
+            Console.WriteLine("*           Game Over            *");
             Console.WriteLine("**********************************");
             Console.WriteLine();
             Console.WriteLine(reason);

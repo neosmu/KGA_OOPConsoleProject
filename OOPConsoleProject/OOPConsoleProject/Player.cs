@@ -41,11 +41,23 @@ namespace OOPConsoleProject
             this.curHP = hp;
             inventory = new Inventory();
         }
+        public void Heal(int amount)
+        {
+            if (curHP == MaxHP)
+            {
+                return;
+            }
+            curHP += amount;
+            if (curHP > maxHP)
+            {
+                curHP = maxHP;
+            }
+        }
         public void PrintStats()
         {
             Console.WriteLine("== 플레이어 정보 ==");
             Console.WriteLine("직업 : {0}", Game.Player.name);
-            Console.WriteLine("체력 : {0} / {1}", Game.Player.CurHP, Game.Player.MaxHP);
+            Console.WriteLine("체력 : {0}/{1}", Game.Player.CurHP, Game.Player.MaxHP);
             Console.WriteLine("공격력 : {0}", Game.Player.attack);
         }
         public void Print()
