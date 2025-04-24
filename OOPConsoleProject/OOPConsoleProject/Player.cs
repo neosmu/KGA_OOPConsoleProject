@@ -41,18 +41,6 @@ namespace OOPConsoleProject
             this.curHP = hp;
             inventory = new Inventory();
         }
-        public void Heal(int amount)
-        {
-            if (curHP == MaxHP)
-            {
-                return;
-            }
-            curHP += amount;
-            if (curHP > maxHP)
-            {
-                curHP = maxHP;
-            }
-        }
         public void PrintStats()
         {
             Console.WriteLine("== 플레이어 정보 ==");
